@@ -1,3 +1,16 @@
+
+
+=======================
+Based on Haystack 1.2.7
+=======================
+
+This fork makes it possible for Haystack to work with Xapian-Haystack 1.1.5beta
+(also forked) and Django 1.8.x. At the time of this fork's creation, Xapian-Haystack
+2.0.0 wasn't working with Haystack 2.x.x, so it was necessary for us to use
+the 1.x branches of both projects...which didn't work with Django 1.8 out of
+the box.
+
+
 ========
 Haystack
 ========
@@ -47,3 +60,4 @@ Haystack has a relatively easily-met set of requirements.
 Additionally, each backend has its own requirements. You should refer to
 http://docs.haystacksearch.org/dev/installing_search_engines.html for more
 details.
+
