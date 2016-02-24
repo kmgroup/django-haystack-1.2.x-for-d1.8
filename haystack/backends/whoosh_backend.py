@@ -224,7 +224,7 @@ class SearchBackend(BaseSearchBackend):
                 models_to_delete = []
 
                 for model in models:
-                    models_to_delete.append(u"%s:%s.%s" % (DJANGO_CT, model._meta.app_label, model._meta.module_name))
+                    models_to_delete.append(u"%s:%s.%s" % (DJANGO_CT, model._meta.app_label, model._meta.model_name))
 
                 self.index.delete_by_query(q=self.parser.parse(u" OR ".join(models_to_delete)))
         except Exception, e:

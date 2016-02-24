@@ -101,7 +101,7 @@ class SearchBackend(BaseSearchBackend):
                 models_to_delete = []
 
                 for model in models:
-                    models_to_delete.append("%s:%s.%s" % (DJANGO_CT, model._meta.app_label, model._meta.module_name))
+                    models_to_delete.append("%s:%s.%s" % (DJANGO_CT, model._meta.app_label, model._meta.model_name))
 
                 self.conn.delete(q=" OR ".join(models_to_delete), commit=commit)
 

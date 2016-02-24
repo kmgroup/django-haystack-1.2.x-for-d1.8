@@ -178,7 +178,7 @@ class BaseSearchBackend(object):
         models = []
 
         for model in self.site.get_indexed_models():
-            models.append(u"%s.%s" % (model._meta.app_label, model._meta.module_name))
+            models.append(u"%s.%s" % (model._meta.app_label, model._meta.model_name))
 
         return models
 
@@ -514,7 +514,7 @@ class BaseSearchQuery(object):
             query = self.matching_all_fragment()
 
         if len(self.models):
-            models = sorted(['%s:%s.%s' % (DJANGO_CT, model._meta.app_label, model._meta.module_name) for model in self.models])
+            models = sorted(['%s:%s.%s' % (DJANGO_CT, model._meta.app_label, model._meta.model_name) for model in self.models])
             models_clause = ' OR '.join(models)
 
             if query != self.matching_all_fragment():
